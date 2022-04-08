@@ -1,0 +1,268 @@
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+    padding:0;
+    margin:0;
+}
+
+body{
+    height:100vh;
+    width:100vw;
+    overflow-x:hidden ;
+    overflow-y: scroll;
+    display: block;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.header{
+    width:100%;
+    height:10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px;
+}
+
+.header label{
+    text-transform: uppercase;
+}
+
+a{
+    outline:none;
+    text-decoration: none;
+    letter-spacing: 1.2px;
+    color:#413636;
+}
+a:hover{
+    opacity:0.7;
+}
+
+.logo:hover{
+    opacity:1;
+}
+/*navBar starts here*/
+.navBar{
+    width:100%;
+    background-color:#fff;
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    outline:none;
+    text-decoration: none;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color:#009933;
+    font-size:40px;
+    text-align: center;
+    position: relative;
+    left:43%;
+}
+
+.navBar ul{
+    float:left;
+    right: 40px;
+}
+
+.navBar ul li{
+    display:inline-block;
+    position: relative;
+}
+
+.navBar ul li:not(:first-child){
+    margin-left: 48px;
+}
+
+.navBar ul li:last-child{
+    margin-right: 24px;
+}
+
+.section{
+    height:100vh;
+    width:100vw;
+}
+
+/*---------------------------------------carousel section------------------------------------------*/
+.carousel {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+ul.slides input {
+    display: none; 
+}
+
+
+.slide-container { 
+    display: block; 
+}
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+}   
+
+.slide-image img {
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 600px;
+    color: #fff;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover + .carousel-controls label{
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block; 
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3,
+input#img-4:checked ~ .carousel-dots label#img-dot-4,
+input#img-5:checked ~ .carousel-dots label#img-dot-5,
+input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+	opacity: 1;
+}
+
+
+input:checked + .slide-container .nav label { display: block; }
+
+/*---------------------------------------aboutus section------------------------------------------*/
+
+.about{
+    background-color: black;
+}
+
+
+/*---------------------------------------services section------------------------------------------*/
+
+
+
+
+/*---------------------------------------contact section------------------------------------------*/
+
+.contact{
+    background-color: black;
+}
+
+/*---------------------------------------footer section------------------------------------------*/
+.footer{
+    display:flex;
+    justify-content:space-between;
+    padding: 10% 5%;;
+}
+
+.address *{
+    display: block;
+}
+
+.footer-links ul li{
+    list-style: none;
+}
+
+.footer-action *{
+    display: block;
+}
+
+.footer-action a{
+    height:50px;
+    width:110px;
+    margin-top: 10px;
+    background-color:#009933;
+    color:#fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,681 @@
+/*-------------Top level style*/
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*
+This is a glossary for colors used in the User Panel
+color for even rows on tables : #f5f3f3;
+*/
+
+body{
+    height:100vh;
+    width:100vw;
+    overflow: hidden;
+}
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.page, .menu{
+    height:100%;
+}
+
+.menu{
+    width:15%;
+    background-color: #39395f;
+    color:#fff;
+    margin:0;
+    display: block;
+}
+
+.page{
+    width: 85%;
+    background-color: #f7f7f7;
+    display: block;
+}
+
+.nav{
+    width:100%;
+    height:4%;
+    background-color: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.page-wrapper{
+    width: 100%;
+    height:96%;
+    overflow-y: scroll;
+}
+
+.page-content{
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+/*----------------------Common element in all or more then one div--------------------------*/
+
+/*Table */
+table {
+    border-collapse: collapse;
+    width: 96%;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius:5px;
+  }
+  th{
+      background-color: #39395f;
+      color:#fff;
+  }
+  
+  td, th {
+    text-align: left;
+    padding: 8px;
+    height:60px;
+  }
+  
+  tr{
+      border-bottom: 1px solid #e0dbdb;
+  }
+
+  form input[type="text"],
+  form input[type="date"],
+  form input[type="number"],
+  form input[type="password"],
+  form select
+  {
+    margin:5px auto; 
+    height:30px;
+    width:80%;
+  }
+  form textarea{
+    margin:5px auto;
+  }
+
+  .lightBtn{
+    color:#000;
+    background-color: #dadee4;
+    border-radius: -5px;
+    margin-right: 0;
+  }
+
+  .viewBtn{
+    width:100%;
+    height:100%;
+    border:none;
+    background-color: #39395f;
+    border-radius: 5px;
+    color:white;
+    cursor: pointer;
+  }
+
+  .submitBtn{
+    width:80%;
+    height:40px;
+    border:none;
+    background-color:royalblue;
+    cursor: pointer;
+    margin: 15px auto;
+    border-radius: 5px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .updateBtn{
+    width:80%;
+    height:40px;
+    border:none;
+    background-color:#009933;
+    cursor: pointer;
+    margin: 15px auto;
+    border-radius: 5px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .updateModalBtn{
+    width:100px;
+    height:40px;
+    border:none;
+    background-color:#009933;
+    cursor: pointer;
+    border-radius: 5px;
+    color:white;
+  }
+
+  .deleteBtn{
+    width:80%;
+    height:40px;
+    border:none;
+    background-color:tomato;
+    cursor: pointer;
+    margin: 15px auto;
+    border-radius: 5px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/*---------timeline styling----------*/
+.timeline{
+    overflow-y: scroll;
+    align-items: center;
+    height: 100%;
+}
+
+.timeline-content{
+    min-height: 50px;
+    border-bottom: 1px solid #e2dfdf;
+    align-items: center;
+
+}
+.timeline .timeline-item{
+    display:flex;
+    position: relative;
+}
+
+.timeline .timeline-item::before{
+    background: #dadee4;
+    content: "";
+    height: 100%;
+    left: 19px;
+    position: absolute;
+    top: 20px;
+    width: 2px;
+	z-index: -1;
+}
+
+.timeline-badge{
+    width: 40px;
+    height: 40px;
+    padding-top:13px;
+}
+
+.timeline-content{
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 13px 0 0 8rem;
+    align-items: center;
+}
+
+.form-group *{
+    display:block;
+}
+
+.form-group label{
+    font-size:15px;
+    margin-left: 2rem;
+}
+
+.modalForm{
+    display: inline-block;
+    text-align: center; /* horizontal */
+    vertical-align:middle; /* vertical */
+}
+
+.req-form{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 10px auto;
+    width: 85%;
+}
+
+
+#f-tab2C,
+#c-tab4C,
+#s-tab4C,
+#mp-formsC,
+#sales-formsC{
+    display:grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: auto;
+    column-gap: 5%;
+    justify-content: center;
+}
+
+ /*---------sub-tabs for each side tabs-------*/
+ #f-tabs, #c-tabs, #s-tabs, #mp-tabs, #sales-tabs{
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    margin-bottom: 10px;
+}
+
+
+/*search result*/
+ .search-result{
+     width:80%;
+     margin: 0px auto;
+     background-color: #fff;
+     box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+     padding:10px;
+ }
+ .search-result table{
+    box-shadow: none;
+ }
+
+ .search-result tr{
+    background-color: #fff;
+ }
+  
+
+/*------------------------------------------Menu div-----------------------------------------*/
+.logo{
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+    margin:0;
+    padding:10px;
+}
+
+.labels{
+    color:gray;
+    display: block;
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 10px 0 10px 0;
+}
+
+.tab{
+    text-decoration: none;
+    color:#fff;
+    display: block;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*---------------------------------------Farm tab---------------------------------------------*/
+.farm-stats{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 140px;
+    column-gap: 2%;
+    justify-content: center;
+}
+
+.farm-stat-item{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #000;
+}
+
+.farm-stat-item h2, .sales-fig-item h2, .cow-stat-item h2, .sheep-stat-item h2{
+    font-size:xx-large;
+}
+
+.farm-content{
+    height:80%;
+    margin: 10px auto;
+    width:85%;
+    display: flex;
+}
+
+#f-tab1C{
+    display:block;
+}
+
+.farm-info{
+    margin-top: 15px;
+    display:grid;
+    grid-template-columns: 62% 30%;
+    grid-template-rows: 350px;
+    column-gap: 2%;
+    justify-content: center;
+}
+
+.gen-farm-info,
+.farm-mp,
+.farm-births{
+    background: white;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+}
+
+.gen-farm-info{
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.gen-farm-info table{
+    box-shadow: none;
+}
+
+.gen-farm-info th{
+    background-color: #fff;
+    color:#000;
+}
+.gen-farm-info td,th{
+    height:45px;
+}
+
+.farm-numbers{
+    display:block;
+}
+
+.farm-numbers:first-child{
+    margin-bottom: 0px;
+}
+
+.farm-mp,
+.farm-births{
+    display:block;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.farm-mp{
+    height:150px;
+}
+
+.farm-births{
+    margin-top:7px;
+    height:190px;
+}
+
+
+.farm-activity{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 15px auto;
+    width: 94%;
+    height: 50%;
+    display: block;
+}
+
+#farmC form{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 10px 0;
+}
+
+/*------------------------------------Cow tab------------------------------------------*/
+
+.cows-stats{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 140px;
+    column-gap: 2%;
+    justify-content: center;
+}
+
+.cow-stat-item{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #000;
+}
+
+.sub-tab{
+    text-decoration: none;
+    color:black;
+    height: 40px;
+    font-size: 15px;
+    padding: 5px;
+    background-color:#e0dede;
+    text-align: center;
+    cursor: pointer;
+    margin: 15px 10px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    border-radius: 6px;
+}
+.sub-tab:hover{
+    opacity: 0.7;
+}
+
+#cowRegC form{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 10px 0;
+}
+
+#cowRegC .req-form{
+    margin: 20px auto;
+}
+
+/*---------------------------------------Sheep tab-------------------------------------------*/
+
+.sheep-stats{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 140px;
+    column-gap: 2%;
+    justify-content: center;
+}
+
+.sheep-stat-item{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #000;
+}
+
+#sheepRegC form{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 10px 0;
+}
+
+#sheepRegC .req-form{
+    margin: 20px auto;
+}
+
+/*--------------------Milk Production tab-----------------------*/
+
+.mp-figs{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 140px;
+    column-gap: 5%;
+    justify-content: center;
+}
+
+.mp-fig-item{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #000;
+}
+
+.mpStats{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 10px auto;
+    width: 80%;
+    height: 450px;
+}
+
+#mp-formsC form{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 10px 0;
+}
+
+/*-----------------------------------------Sales tab------------------------------------------*/
+
+.sales-figs{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: 140px;
+    column-gap: 5%;
+    justify-content: center;
+}
+
+.sales-fig-item{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #000;
+}
+
+.salesStats{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 10px auto;
+    width: 80%;
+}
+
+#sales-formsC form{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 10px 0;
+}
+
+
+/*----------------------------------------Notes tab----------------------------------------------*/
+
+#notesC form{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 10px auto;
+    width: 80%;
+}
+
+/*----------------------------------------Settings tab---------------------------------------------*/
+
+#settingC form{
+    background: white;
+    padding: 5px 20px 10px 20px;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.1);
+    margin: 10px auto;
+    width: 80%;
+}
+
+/*--------------- The Modal (background)------------------ */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #39395f;
+    color: white;
+  }
+  
+  .modal-body {
+    padding: 2px 16px;
+
+  }
+
+  .modal-block{
+    width : 100%;
+  }
+  
+  .modal-footer {
+    padding: 10px 16px;
+    background-color: #39395f;
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal-row{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    height:45px;
+    text-align: center; /* horizontal */
+    vertical-align:middle; /* vertical */
+  }
+
+  /*-----------------------------Operation messages-------------------*/
+
+  .op-msg{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding: 20px; /* Location of the box */
+    left: 40%;
+    top: 40%;
+    width: 25%; 
+    height: 15%;
+    background-color: #fefefe;
+    border: 1px solid #000;
+  }
