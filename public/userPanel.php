@@ -234,7 +234,7 @@
                                 ?>Births This Month
                             </div>
                         </div>
-                        <form class="req-form" action="" method="GET">
+                        <form class="req-form" action="" method="POST">
                             <input type="hidden" name="dest" value="cowRegC" />
                             <input type="text" name="animal-id" placeholder="Enter Cow Gov ID" required/>
                             <input type="radio" id="vax" name="option" value="1" required>
@@ -244,14 +244,14 @@
                             <input type="submit" name="get-val"/>
                         </form>
                         <?php
-                            if (isset($_GET['get-val'])) {
-                                if ($_GET['option'] == 1) {
+                            if (isset($_POST['get-val'])) {
+                                if ($_POST['option'] == 1) {
                                     $cow = new Cow();
-                                    $cow->getCowVaccinationHistory($_GET['animal-id'], $_SESSION["userId"]);
+                                    $cow->getCowVaccinationHistory($_POST['animal-id'], $_SESSION["userId"]);
                                 }
-                                else if($_GET['option'] == 2) {
+                                else if($_POST['option'] == 2) {
                                     $cow = new Cow();
-                                    $cow->getCowWeightMeasurementHistory($_GET['animal-id'], $_SESSION["userId"]);
+                                    $cow->getCowWeightMeasurementHistory($_POST['animal-id'], $_SESSION["userId"]);
                                 } 
                             }
                         ?> 
@@ -419,15 +419,15 @@
                                 ?>Births This Month
                             </div>
                         </div>
-                        <form action="" class="req-form" method="GET">
+                        <form action="" class="req-form" method="POST">
                             <input type="text" name="animal-id" placeholder="Enter Gov/Local ID" required/>
                             <input type="hidden" name="dest" value="sheepRegC">
                             <input type="submit" name="get-weight"/>
                         </form> 
                         <?php
-                            if (isset($_GET['get-weight'])) {
+                            if (isset($_POST['get-weight'])) {
                                 $sheep = new Sheep();
-                                $sheep->getSheepWeightMeasurementHistory($_GET['animal-id'], $_SESSION["userId"]);
+                                $sheep->getSheepWeightMeasurementHistory($_POST['animal-id'], $_SESSION["userId"]);
                             }
                         ?> 
                         <?php
@@ -571,7 +571,7 @@
                                 ?> This Month
                             </div>
                         </div>
-                        <form class="req-form" action="" method="GET">
+                        <form class="req-form" action="" method="POST">
                             <input type="hidden" name="dest" value="milkProductionC" />
                             <input type="text" name="animal-id" placeholder="Enter Animal (Cow/Sheep)Gov ID" required/>
                             <input type="radio" id="cow" name="option" value="1" required>
@@ -581,14 +581,14 @@
                             <input type="submit" name="get-mp"/>
                         </form>
                         <?php
-                            if (isset($_GET['get-mp'])) {
-                                if ($_GET['option'] == 1) {
+                            if (isset($_POST['get-mp'])) {
+                                if ($_POST['option'] == 1) {
                                     $cow = new Cow();
-                                    $cow->getCowMPHistory($_GET['animal-id'], $_SESSION["userId"]);
+                                    $cow->getCowMPHistory($_POST['animal-id'], $_SESSION["userId"]);
                                 }
                                 else {
                                     $sheep = new Sheep();
-                                    $sheep->getSheepMPHistory($_GET['animal-id'],$_SESSION["userId"]);
+                                    $sheep->getSheepMPHistory($_POST['animal-id'],$_SESSION["userId"]);
                                 } 
                             }
                         ?>
@@ -661,7 +661,7 @@
                                 ?> Made This Month
                             </div>
                         </div>
-                        <form class="req-form" action="" method="GET">
+                        <form class="req-form" action="" method="POST">
                             <input type="hidden" name="dest"  value="salesC" />
                             <input type="text" name="animal-id" placeholder="Enter Animal (Cow/Sheep)Gov ID" required/>
                             <input type="radio" id="cow" name="option" value="1" required>
@@ -671,13 +671,13 @@
                             <input type="submit" name="get-sale"/>
                         </form>
                         <?php
-                            if (isset($_GET['get-sale'])) {
+                            if (isset($_POST['get-sale'])) {
                                 $sale = new Sales();
-                                if ($_GET['option'] == 1) {
-                                    $sale->getCowSale($_GET['animal-id'],$_SESSION["userId"]);
+                                if ($_POST['option'] == 1) {
+                                    $sale->getCowSale($_POST['animal-id'],$_SESSION["userId"]);
                                 }
                                 else {
-                                    $sale->getSheepSale($_GET['animal-id'],$_SESSION["userId"]);
+                                    $sale->getSheepSale($_POST['animal-id'],$_SESSION["userId"]);
                                 } 
                             }
                         ?>
@@ -789,15 +789,15 @@
 
                 <!-- ---------------Notes div---------------- -->
                 <div id="notesC" class="page-content">
-                    <form action="" method="GET">
+                    <form action="" method="POST">
                         <input type="text" name="animal-id" placeholder="Enter Gov/Local ID" required/>
                         <input type="hidden" name="dest" value="notesC">
                         <input type="submit" name="get-note"/>
                     </form>
                     <?php
-                        if (isset($_GET['get-note'])) {
+                        if (isset($_POST['get-note'])) {
                             $note = new Notes();
-                            $note->getNotes($_GET['animal-id'], $_SESSION["userId"]);
+                            $note->getNotes($_POST['animal-id'], $_SESSION["userId"]);
                         }
                     ?>
                     <form action="../src/FormHandlers/create/addNote.inc.php" method="post">
